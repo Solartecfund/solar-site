@@ -218,6 +218,45 @@ header p { font-size: 1rem; }
         <label id="label-message">Your Message</label>
         <textarea name="message" rows="5" required></textarea>
         <button type="submit" id="send-button">Send Message</button>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="showConfirmation(event)">
+    <input type="hidden" name="form-name" value="contact">
+
+    <label id="label-name">Your Name</label>
+    <input type="text" name="name" required>
+
+    <label id="label-email">Your Email</label>
+    <input type="email" name="email" required>
+
+    <label id="label-message">Your Message</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit" id="send-button">Send Message</button>
+</form>
+
+<p id="confirmation-message" style="display:none; margin-top:15px; color:green; font-weight:bold;">
+    Thank you! We'll contact you soon.
+</p>
+
+<script>
+function showConfirmation(event) {
+    event.preventDefault(); // stop normal form action
+
+    const form = event.target;
+
+    // Netlify form submission via fetch
+    const data = new FormData(form);
+    fetch("/", {
+        method: "POST",
+        body: data
+    })
+    .then(() => {
+        form.style.display = "none";          // hide form
+        document.getElementById("confirmation-message").style.display = "block"; // show message
+    })
+    .catch(error => alert("Error submitting form"));
+}
+</script>
+
     </form>
 </div>
 
