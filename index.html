@@ -209,15 +209,7 @@ header p { font-size: 1rem; }
         Send your enquiry below!
     </p>
 
-    <form class="contact-form" name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-        <label id="label-name">Your Name</label>
-        <input type="text" name="name" required>
-        <label id="label-email">Your Email</label>
-        <input type="email" name="email" required>
-        <label id="label-message">Your Message</label>
-        <textarea name="message" rows="5" required></textarea>
-        <button type="submit" id="send-button">Send Message</button>
+
         <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="showConfirmation(event)">
     <input type="hidden" name="form-name" value="contact">
 
