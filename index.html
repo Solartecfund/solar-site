@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinity Solar Tec</title>
+
+<style>
+/* ---------- Reset & Base ---------- */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Arial', sans-serif; background: #fefefc; color: #033; line-height: 1.6; }
+
+/* ---------- Header ---------- */
+header {
+    background: linear-gradient(135deg, #fdd835, #43a047);
+    padding: 20px 10px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+header h1 { font-size: 2rem; margin-bottom: 5px; }
+header p { font-size: 1rem; }
+
+/* ---------- Language Switch ---------- */
+.lang-switch {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.lang-switch button {
+    background: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 5px 8px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+.lang-switch button:hover { background: #ddd; }
+
+/* ---------- Hero Section ---------- */
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(160deg, #fdf3b6, #e0f2f1);
+}
+.hero h2 { font-size: 2rem; margin-bottom: 15px; color: #0a5a2b; }
+.hero p { font-size: 1.1rem; color: #333; }
+
+/* ---------- Sections ---------- */
+.section { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+.section h2 { font-size: 1.8rem; margin-bottom: 15px; color: #0a5a2b; }
+.section h3 { font-size: 1.4rem; margin: 15px 0 10px; color: #43a047; }
+.section p { margin-bottom: 15px; color: #333; }
+
+/* ---------- Contact Form ---------- */
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.contact-form button {
+    background: #43a047;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact-form button:hover { background: #0a5a2b; }
+
+/* ---------- Social Preview Card ---------- */
+.social-card {
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: transform 0.2s;
+}
+.social-card:hover { transform: scale(1.03); }
+.social-card a { text-decoration: none; color: inherit; display: block; }
+.social-card img { width: 100%; display: block; }
+.social-info { padding: 12px; text-align: center; }
+.social-info h3 { font-size: 1.2rem; margin:5px 0; color: #0a5a2b; }
+.social-info p { font-size: 0.9rem; color: #555; }
+
+/* ---------- Gallery Section ---------- */
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.gallery img {
+    width: 32%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 180px;
+    transition: transform 0.2s;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* ---------- Map / Where We Are ---------- */
+.map-section {
+    text-align: center;
+    background: #e6f5ea;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+.map-section iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border: 0;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    padding: 25px 10px;
+    background: #43a047;
+    color: white;
+    margin-top: 50px;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width: 768px){
+    .gallery img { width: 100%; margin-bottom: 10px; }
+}
+@media(max-width: 600px){
+    header h1 { font-size: 1.5rem; }
+    .hero h2 { font-size: 1.5rem; }
+    .lang-switch { top:10px; right:10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="title">Infinity Solar Tec</h1>
+    <p id="subtitle">Solar solutions for homes & businesses</p>
+
+    <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+        <button onclick="setLang('it')">IT</button>
+    </div>
+</header>
+
+<div class="hero">
+    <h2 id="hero-title">Clean Energy for a Brighter Future</h2>
+    <p id="hero-text">We provide solar systems, gadgets, and green energy solutions.</p>
+</div>
+
+<div class="section">
+    <h2 id="about-title">About Us</h2>
+    <p id="about-text">
+        Infinity Solar Tec offers innovative solar solutions for homes and businesses.
+        We also provide a wide selection of solar gadgets, devices, and eco-friendly products.
+    </p>
+
+    <h3 id="products-title">Our Products</h3>
+    <p id="products-text">
+        Find our solar gadgets and devices in our ecommerce stores:<br>
+        <a href="YOUR_ECOMMERCE_LINK" target="_blank" id="store-link">Visit our store →</a>
+    </p>
+
+    <!-- 3-image gallery -->
+    <div class="gallery">
+        <img src="garagefan.png" alt="Product 1">
+        <img src="soalr-dev.png" alt="Product 2">
+        <img src="ipanel.avif" alt="Product 3">
+    </div>
+</div>
+
+<!-- Where We Are -->
+<div class="section map-section">
+    <h2 id="location-title">Where We Are</h2>
+    <p id="location-text">Our office is located in Nancy, France</p>
+    <!-- Google Maps Embed -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.243553951413!2d6.179528276062503!3d48.69205457926606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795210e96f022a7%3A0x8fa0d8f1731f7fa4!2sNancy%2C%20France!5e0!3m2!1sen!2sus!4v1698175555555" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="section">
+    <h2 id="contact-title">Contact Us</h2>
+    <p id="contact-text">
+        If you need a solar solution for your home or business, we’re happy to assist you.
+        Send your enquiry below!
+    </p>
+
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <label id="label-name">Your Name</label>
+        <input type="text" name="name" required>
+        <label id="label-email">Your Email</label>
+        <input type="email" name="email" required>
+        <label id="label-message">Your Message</label>
+        <textarea name="message" rows="5" required></textarea>
+        <button type="submit" id="send-button">Send Message</button>
+    </form>
+</div>
+
+<div class="section social-section">
+    <h2 id="social-title">Follow Us</h2>
+    <div class="social-card">
+        <a href="https://www.instagram.com/depsciencesgreen/" target="_blank">
+            <img src="social-image.png" alt="Follow us">
+            <div class="social-info">
+                <h3>Infinity Solar Tec</h3>
+                <p>Follow us for solar gadgets, green energy tips, and more!</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<footer class="footer" id="footer">
+    © 2025 Infinity Solar Tec — All rights reserved.
+</footer>
+
+<script>
+// ---------- Multi-language ---------- //
+const texts = {
+    en: {
+        title:"Infinity Solar Tec", subtitle:"Solar solutions for homes & businesses",
+        heroTitle:"Clean Energy for a Brighter Future", heroText:"We provide solar systems, gadgets, and green energy solutions.",
+        aboutTitle:"About Us", aboutText:"Infinity Solar Tec offers innovative solar solutions for homes and businesses. We also provide a wide selection of solar gadgets, devices, and eco-friendly products.",
+        productsTitle:"Our Products", productsText:"Find our solar gadgets and devices in our ecommerce stores:", storeLink:"Visit our store →",
+        locationTitle:"Where We Are", locationText:"Our office is located in Nancy, France",
+        contactTitle:"Contact Us", contactText:"If you need a solar solution for your home or business, we’re happy to assist you. Send your enquiry below!",
+        labelName:"Your Name", labelEmail:"Your Email", labelMessage:"Your Message", sendButton:"Send Message",
+        socialTitle:"Follow Us", socialLink:"Follow us on social media",
+        footer:"© 2025 Infinity Solar Tec — All rights reserved."
+    },
+    fr: {
+        title:"Infinity Solar Tec", subtitle:"Solutions solaires pour maisons et entreprises",
+        heroTitle:"Énergie propre pour un avenir meilleur", heroText:"Nous fournissons des systèmes solaires, gadgets et solutions d’énergie verte.",
+        aboutTitle:"À propos de nous", aboutText:"Infinity Solar Tec propose des solutions solaires innovantes pour les maisons et les entreprises. Nous offrons également une large gamme de gadgets solaires et produits écologiques.",
+        productsTitle:"Nos Produits", productsText:"Découvrez nos gadgets et appareils solaires dans nos boutiques en ligne :", storeLink:"Visitez notre boutique →",
+        locationTitle:"Où Nous Sommes", locationText:"Notre bureau est situé à Nancy, France",
+        contactTitle:"Contactez-nous", contactText:"Si vous avez besoin d’une solution solaire pour votre maison ou votre entreprise, nous sommes heureux de vous aider. Envoyez-nous votre demande !",
+        labelName:"Votre Nom", labelEmail:"Votre Email", labelMessage:"Votre Message", sendButton:"Envoyer",
+        socialTitle:"Suivez-nous", socialLink:"Suivez-nous sur les réseaux sociaux",
+        footer:"© 2025 Infinity Solar Tec — Tous droits réservés."
+    },
+    it: {
+        title:"Infinity Solar Tec", subtitle:"Soluzioni solari per case e aziende",
+        heroTitle:"Energia pulita per un futuro migliore", heroText:"Offriamo sistemi solari, gadget e soluzioni di energia verde.",
+        aboutTitle:"Chi Siamo", aboutText:"Infinity Solar Tec fornisce soluzioni solari innovative per case e aziende. Offriamo anche una vasta selezione di dispositivi solari e prodotti ecologici.",
+        productsTitle:"I Nostri Prodotti", productsText:"Trova i nostri gadget e dispositivi solari nei nostri negozi online:", storeLink:"Visita il nostro negozio →",
+        locationTitle:"Dove Siamo", locationText:"Il nostro ufficio si trova a Nancy, Francia",
+        contactTitle:"Contattaci", contactText:"Se hai bisogno di una soluzione solare per la tua casa o la tua azienda, saremo felici di aiutarti. Invia la tua richiesta!",
+        labelName:"Il Tuo Nome", labelEmail:"La Tua Email", labelMessage:"Il Tuo Messaggio", sendButton:"Invia Messaggio",
+        socialTitle:"Seguici", socialLink:"Seguici sui social",
+        footer:"© 2025 Infinity Solar Tec — Tutti i diritti riservati."
+    }
+};
+
+function setLang(lang){
+    const t = texts[lang];
+    document.getElementById("title").innerText = t.title;
+    document.getElementById("subtitle").innerText = t.subtitle;
+    document.getElementById("hero-title").innerText = t.heroTitle;
+    document.getElementById("hero-text").innerText = t.heroText;
+    document.getElementById("about-title").innerText = t.aboutTitle;
+    document.getElementById("about-text").innerText = t.aboutText;
+    document.getElementById("products-title").innerText = t.productsTitle;
+    document.getElementById("products-text").innerHTML = t.productsText + "<br>";
+    document.getElementById("store-link").innerText = t.storeLink;
+    document.getElementById("location-title").innerText = t.locationTitle;
+    document.getElementById("location-text").innerText = t.locationText;
+    document.getElementById("contact-title").innerText = t.contactTitle;
+    document.getElementById("contact-text").innerText = t.contactText;
+    document.getElementById("label-name").innerText = t.labelName;
+    document.getElementById("label-email").innerText = t.labelEmail;
+    document.getElementById("label-message").innerText = t.labelMessage;
+    document.getElementById("send-button").innerText = t.sendButton;
+    document.getElementById("social-title").innerText = t.socialTitle;
+    document.getElementById("social-link").innerText = t.socialLink;
+    document.getElementById("footer").innerText = t.footer;
+}
+</script>
+
+</body>
+</html>
+
