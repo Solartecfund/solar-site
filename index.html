@@ -87,44 +87,28 @@
         /* ==========================================================================
            5. THE CARDS (Green Mobility, Infinity, Us)
            ========================================================================== */
-        .card {
-            background-color: var(--card-bg);
-            height: 550px;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Pushes text to top, actions to bottom */
-            padding: 40px 30px;
-            text-align: center;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+     .card {
+    background-color: #fbfbfd;       /* Apple's official off-white card background */
+    color: #1d1d1f;                  /* Rich dark gray/black for main headers */
+    height: 550px;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;     /* Keeps text anchored to the top */
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
 
-        /* Subtle Apple Hover Scale Effect */
-        .card:hover {
-            transform: scale(1.015);
-        }
-
-        /* Text Layout inside Cards */
-        .card-content {
-            z-index: 2; /* Ensures text stays above the background image */
-        }
-
-        .card h2 {
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.4;
-            max-width: 85%;
-            margin: 0 auto;
-        }
+.card p {
+    font-size: 16px;
+    color: #6e6e73;                  /* Muted dark gray for description readability */
+    line-height: 1.4;
+    max-width: 85%;
+    margin: 10px auto 0 auto;
+}
 
         /* Action/Link Style */
         .card-link {
