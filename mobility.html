@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Mobility — Green Tech</title>
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --card-bg: #fbfbfd;
+            --text-dark: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent-color: #0066cc;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-stack);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Large Product Showcase Row */
+        .showcase-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .showcase-section.reverse {
+            direction: rtl; /* Flips text and image on second section for Apple alternating look */
+        }
+        .showcase-section.reverse .text-block {
+            direction: ltr; /* Keeps text reading normally left-to-right */
+        }
+
+        .text-block h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .text-block p {
+            font-size: 19px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .image-block {
+            width: 100%;
+            height: 450px;
+            background-color: var(--card-bg);
+            border-radius: 22px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .image-block img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Prevents cropping completely */
+            transition: transform 0.5s ease;
+        }
+
+        .image-block:hover img {
+            transform: scale(1.03);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 22px;
+            transition: opacity 0.2s;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Mobile Viewports */
+        @media (max-width: 768px) {
+            .showcase-section, .showcase-section.reverse {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                direction: ltr;
+                padding: 40px 0;
+            }
+            .text-block h1 { font-size: 34px; }
+            .text-block p { font-size: 17px; }
+            .image-block { height: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Section 1: The Autonomous Drone Container -->
+        <section class="showcase-section">
+            <div class="text-block">
+                <h1>Cargo Capacity.<br>Infinite Horizon.</h1>
+                <p>Engineered for remote terrain. Combining high-payload cargo space with solar-assisted flight times, our heavy-duty delivery drones bypass missing infrastructure to bring fast, low-cost supply lines to deep mountain passes and unreachable communities.</p>
+            </div>
+            <div class="image-block">
+                <!-- Using your exact drone image from GitHub -->
+                <img src="https://github.com/Solartecfund/solar-site/blob/main/delivery-drone-concept-scaled.jpg?raw=true" alt="Infinity Cargo Drone Concept">
+            </div>
+        </section>
+
+        <!-- Section 2: The Hydrogen / Green Bike Container -->
+        <section class="showcase-section reverse">
+            <div class="text-block">
+                <h1>Conquer the terrain.<br>Zero emissions.</h1>
+                <p>Built for the rugged gradients of high-altitude roads. Our upcoming smart e-bike prototype delivers effortless climbing over short, punishing distances without breaking a sweat—or the planet. We are designing the future of alpine transit.</p>
+                <a href="index.html#contact" class="cta-btn">Invest in the Prototype</a>
+            </div>
+            <div class="image-block">
+                <!-- Using your exact bicycle image from GitHub -->
+                <img src="https://github.com/Solartecfund/solar-site/blob/main/Pragma-hydrogen-Bicycle.jpg?raw=true" alt="Infinity Alpine E-Bike">
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
