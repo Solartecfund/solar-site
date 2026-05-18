@@ -205,14 +205,127 @@
         .card-us::before {
             background-image: url('https://github.com/Solartecfund/solar-site/blob/main/Pragma-hydrogen-Bicycle.jpg?raw=true');
         }
+        
+        /* ==========================================================================
+           9. CONTACT SECTION STYLING
+           ========================================================================== */
+        .contact-section {
+            padding: 100px 0 60px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Exact 50/50 side-by-side split */
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        /* Left Side Text Panel */
+        .contact-info h2 {
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 16px;
+        }
+
+        .contact-intro {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .info-block {
+            margin-bottom: 24px;
+        }
+
+        .info-block h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .info-block p {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        /* Right Side Input Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            font-size: 15px;
+            background-color: #f5f5f7; /* Very light gray interior matching Apple input styles */
+            border: 1px solid transparent;
+            border-radius: 12px;
+            color: var(--text-dark);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        /* Changes background color dynamically to active state */
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            background-color: #ffffff;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+        }
+
+        /* Apple Blue pill button styling */
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 22px;
+            cursor: pointer;
+            align-self: flex-start; /* Keeps the button sleek and compact */
+            transition: opacity 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
 
         /* ==========================================================================
            8. RESPONSIVE LAYOUT (Mobile View)
            ========================================================================== */
-        @media (max-width: 992px) {
+       @media (max-width: 992px) {
             .apple-grid {
                 grid-template-columns: 1fr; 
                 gap: 16px;
+            }
+            /* Add this block right here to fix mobile screens */
+            .info-grid {
+                grid-template-columns: 1fr; 
+                gap: 40px;
             }
             .card {
                 height: 500px; 
@@ -231,6 +344,7 @@
         <a href="#mobility">Green Mobility</a>
         <a href="#infinity">Infinity Products</a>
         <a href="#us">Us</a>
+        <a href="#contact">Contact Us</a>
     </nav>
 
     <!-- Main Front Page Container -->
@@ -274,6 +388,88 @@
             </section>
 
         </div> <!-- Closes the apple-grid -->
+        <!-- ==========================================================================
+           NEW: VISIBLE CONTACT INFO BANNER
+           ========================================================================== -->
+        <section class="info-banner" id="contact">
+            <div class="info-grid">
+                
+                <!-- Column 1: City / HQ -->
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <h3>Location</h3>
+                    <p>Silicon Valley</p>
+                    <p class="info-subtext">California, USA</p>
+                </div>
+
+                <!-- Column 2: Phone -->
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <h3>Phone</h3>
+                    <p>+1 (555) 019-2831</p>
+                    <p class="info-subtext">Mon-Fri, 9am - 5pm PST</p>
+                </div>
+
+                <!-- Column 3: Corporate Email -->
+                <div class="info-item">
+                    <span class="info-icon">✉️</span>
+                    <h3>Email</h3>
+                    <p>connect@infinity.green</p>
+                    <p class="info-subtext">We reply within 24 hours</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- ==========================================================================
+           NEW: CONTACT US SECTION WITH SECURE NETLIFY FORM
+           ========================================================================== -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                
+                <!-- Left Side: Your Space For Company/Personal Information -->
+                <div class="contact-info">
+                    <h2>Connect with Infinity.</h2>
+                    <p class="contact-intro">Have questions about our green hardware or mobility solutions? Drop us a line or find us through our channels.</p>
+                    
+                    <div class="info-block">
+                        <h3>HQ Location</h3>
+                        <p>Silicon Valley / Remote Worldwide</p>
+                    </div>
+                    
+                    <div class="info-block">
+                        <h3>Business Hours</h3>
+                        <p>Monday — Friday, 9:00 AM — 5:00 PM PST</p>
+                    </div>
+                    
+                    <div class="info-block">
+                        <h3>Network</h3>
+                        <p>Follow our open-source milestones via GitHub.</p>
+                    </div>
+                </div>
+
+                <!-- Right Side: Clean Apple-Style Interactive Form -->
+                <!-- 'data-netlify="true"' hides your email and manages database entries automatically -->
+                <form name="infinity-contact" method="POST" data-netlify="true" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" required placeholder="tiendavitae@gmail.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">How can we help you?</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+            </div>
+        </section>
     </main>
 
 </body>
