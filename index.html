@@ -62,6 +62,11 @@
             opacity: 0.7;
             transition: opacity 0.3s ease;
         }
+        nav a.nav-logo {
+    font-size: 22px; /* Makes the symbol prominent like the Apple icon */
+    font-weight: bold;
+    margin-right: 40px; /* Gives it some breathing room from the text links */
+}
 
         nav a:hover {
             opacity: 1;
@@ -75,7 +80,13 @@
             margin: 0 auto;
             padding: 30px 20px;
         }
-
+<!-- NEW: Centered Company Introduction Section -->
+    <section class="company-hero">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Infinity_Symbol.svg" alt="Infinity Logo" class="hero-logo">
+        <h1>Infinity</h1>
+        <p class="hero-subtitle">The green company</p>
+    </section>
+        
         /* The 3-Column Premium Apple Grid */
         .apple-grid {
             display: grid;
@@ -83,7 +94,40 @@
             gap: 20px;                             /* Space between cards */
             width: 100%;
         }
+/* ==========================================================================
+          4.2. NEW: COMPANY HERO INTRO STYLES
+           ========================================================================== */
+        .company-hero {
+            text-align: center;
+            padding: 80px 20px 60px 20px; /* Big generous spacing at top and bottom */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .hero-logo {
+            width: 70px;          /* Perfectly scaled logo size */
+            height: auto;
+            margin-bottom: 24px;
+            /* This CSS filter turns the black SVG graphic into crisp Apple white */
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        }
+
+        .company-hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--text-primary);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            color: #86868b;        /* Classic Apple muted subtitle color */
+            margin-top: 8px;
+            letter-spacing: -0.01em;
+        }
         /* ==========================================================================
            5. THE CARDS (Green Mobility, Infinity, Us)
            ========================================================================== */
@@ -183,11 +227,14 @@
 <body>
 
     <!-- Frosted Navbar -->
-    <nav>
-        <a href="#mobility">Green Mobility</a>
-        <a href="#infinity">Infinity Products</a>
-        <a href="#us">Us</a>
-    </nav>
+<nav>
+    <!-- The Infinity Logo (Unicode) -->
+    <a href="#" class="nav-logo">&#8734;</a>
+    
+    <a href="#mobility">Green Mobility</a>
+    <a href="#infinity">Infinity Products</a>
+    <a href="#us">Us</a>
+</nav>
 
     <!-- Main Front Page Container -->
     <main class="front-page-container">
