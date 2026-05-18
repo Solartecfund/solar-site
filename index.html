@@ -6,14 +6,14 @@
     <title>Infinity & Mobility</title>
     <style>
         /* ==========================================================================
-           1. DESIGN SYSTEM VARIABLES (Modify these to change the site's look)
+           1. DESIGN SYSTEM VARIABLES
            ========================================================================== */
         :root {
-            --bg-color: #FFFFFF;            /* Deep Apple black */
-            --card-bg: #F5F5F5;             /* Sleek dark gray for cards */
-            --text-primary: #f5f5f7;        /* Off-white for crisp readability */
-            --text-secondary: #000000;      /* Muted gray for descriptions */
-            --accent-color: #2997ff;        /* Apple link blue */
+            --bg-color: #FFFFFF;            /* Pure white background */
+            --card-bg: #fbfbfd;             /* Apple's official light card gray */
+            --text-dark: #1d1d1f;           /* Crisp dark gray/black for main headers */
+            --text-muted: #6e6e73;          /* Soft charcoal gray for secondary descriptions */
+            --accent-color: #0066cc;        /* Premium Apple interactive blue */
             --card-radius: 22px;            /* Modern iOS-style rounded corners */
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
@@ -30,8 +30,8 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
-            padding-top: 44px; /* Prevents navbar from covering content */
+            color: var(--text-dark);
+            padding-top: 44px; 
             -webkit-font-smoothing: antialiased;
         }
 
@@ -43,18 +43,18 @@
             top: 0;
             width: 100%;
             height: 44px;
-            background: rgba(22, 22, 23, 0.8);
+            background: rgba(255, 255, 255, 0.8); /* Changed to white-translucent for light mode */
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px); /* Safari support */
+            -webkit-backdrop-filter: blur(20px); 
             z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         nav a {
-            color: var(--text-primary);
+            color: var(--text-dark); /* Fixed visibility issue */
             text-decoration: none;
             font-size: 12px;
             letter-spacing: 0.5px;
@@ -62,110 +62,138 @@
             opacity: 0.7;
             transition: opacity 0.3s ease;
         }
+
         nav a.nav-logo {
-    font-size: 22px; /* Makes the symbol prominent like the Apple icon */
-    font-weight: bold;
-    margin-right: 40px; /* Gives it some breathing room from the text links */
-}
+            font-size: 22px; 
+            font-weight: bold;
+            margin-right: 40px; 
+            opacity: 0.9;
+        }
 
         nav a:hover {
             opacity: 1;
         }
 
         /* ==========================================================================
-           4. MAIN HERO GRAPHIC / GRID HOLDER
+           4. COMPANY HERO INTRO STYLES (Fixed CSS Location)
+           ========================================================================== */
+        .company-hero {
+            text-align: center;
+            padding: 80px 20px 60px 20px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-logo {
+            width: 60px;          
+            height: auto;
+            margin-bottom: 20px;
+            /* Keeps the logo dark gray to look elegant against the white page background */
+            filter: invert(10%) sepia(10%) saturate(10%) hue-rotate(0deg) brightness(10%) contrast(100%);
+        }
+
+        .company-hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-muted);        
+            margin-top: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        /* ==========================================================================
+           5. MAIN GRID WRAPPER
            ========================================================================== */
         .front-page-container {
             max-width: 1260px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 0 20px 60px 20px;
         }
-<!-- NEW: Centered Company Introduction Section -->
-    <section class="company-hero">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Infinity_Symbol.svg" alt="Infinity Logo" class="hero-logo">
-        <h1>Infinity</h1>
-        <p class="hero-subtitle">The green company</p>
-    </section>
         
-        /* The 3-Column Premium Apple Grid */
         .apple-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-            gap: 20px;                             /* Space between cards */
+            grid-template-columns: repeat(3, 1fr); /* Forces side-by-side structure */
+            gap: 20px;                             
             width: 100%;
         }
-
           
         /* ==========================================================================
-           5. THE CARDS (Green Mobility, Infinity, Us)
+           6. THE CARDS
            ========================================================================== */
-     .card {
-    background-color: #fbfbfd;       /* Apple's official off-white card background */
-    color: #1d1d1f;                  /* Rich dark gray/black for main headers */
-    height: 550px;
-    border-radius: var(--card-radius);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;     /* Keeps text anchored to the top */
-    padding: 40px 30px;
-    text-align: center;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
+        .card {
+            background-color: var(--card-bg);       
+            color: var(--text-dark);                  
+            height: 550px;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;     
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 1px solid rgba(0, 0, 0, 0.03); /* Soft subtle boundary line */
+        }
 
-.card p {
-    font-size: 16px;
-    color: #6e6e73;                  /* Muted dark gray for description readability */
-    line-height: 1.4;
-    max-width: 85%;
-    margin: 10px auto 0 auto;
-}
+        .card h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
 
-        /* Action/Link Style */
-       .card-link {
-    z-index: 2;
-    color: #0066cc;                  /* Premium Apple interactive blue */
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 12px;                /* Sits nicely right under the description paragraph */
-}
+        .card p {
+            font-size: 16px;
+            color: var(--text-muted);                  
+            line-height: 1.4;
+            max-width: 85%;
+            margin: 10px auto 0 auto;
+        }
+
+        .card-link {
+            z-index: 2;
+            color: var(--accent-color);                  
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 12px;                
+        }
 
         .card-link:hover {
             text-decoration: underline;
         }
 
         /* ==========================================================================
-           6. IMAGE CONFIGURATION (Using placeholders - replace with your URLs)
+           7. CARD IMAGES (Pseudoelements)
            ========================================================================== */
         .card::before {
-    content: "";
-    position: absolute;
-    bottom: 40px;                    /* Leaves a clean margin at the very bottom */
-    left: 5%;
-    width: 90%;                      /* Prevents the image from touching card edges */
-    height: 55%;                     /* Allocates the bottom 55% of the card to the image */
-    
-    background-size: contain;        /* THE FIX: Scales image completely without cropping */
-    background-repeat: no-repeat;    /* Prevents the image from tiling */
-    background-position: bottom center; /* Centers the product at the bottom */
-    
-    z-index: 1;
-    opacity: 1;                      /* Shows the crisp, true colors of your image */
-    transition: transform 0.3s ease;
-}
-
-/* Optional: Elegant Apple zoom effect on the product image when hovering over the card */
-.card:hover::before {
-    transform: scale(1.03);
-}
-
-        .card:hover::before {
-            opacity: 0.8; /* Brightens image slightly on hover */
+            content: "";
+            position: absolute;
+            bottom: 40px;                    
+            left: 5%;
+            width: 90%;                      
+            height: 52%;                     
+            background-size: contain;        
+            background-repeat: no-repeat;    
+            background-position: bottom center; 
+            z-index: 1;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Individual Card Background Images */
+        .card:hover::before {
+            transform: scale(1.04); /* Smooth hardware zoom animation */
+        }
+
+        /* Individual Images Routing from GitHub Production Paths */
         .card-mobility::before {
             background-image: url('https://github.com/Solartecfund/solar-site/blob/main/delivery-drone-concept-scaled.jpg?raw=true');
         }
@@ -175,19 +203,22 @@
         }
 
         .card-us::before {
-            background-image: url('https://github.com/Solartecfund/solar-site/blob/main/Pragma-hydrogen-Bicycle.jpg?raw=true?auto=format&fit=crop&w=600&q=80');
+            background-image: url('https://github.com/Solartecfund/solar-site/blob/main/Pragma-hydrogen-Bicycle.jpg?raw=true');
         }
 
         /* ==========================================================================
-           7. RESPONSIVE DESIGN (Mobile Friendly)
+           8. RESPONSIVE LAYOUT (Mobile View)
            ========================================================================== */
         @media (max-width: 992px) {
             .apple-grid {
-                grid-template-columns: 1fr; /* Switches to 1 column stacked on mobile */
+                grid-template-columns: 1fr; 
                 gap: 16px;
             }
             .card {
-                height: 480px; /* Marginally shorter cards on mobile */
+                height: 500px; 
+            }
+            .company-hero h1 {
+                font-size: 42px;
             }
         }
     </style>
@@ -195,17 +226,24 @@
 <body>
 
     <!-- Frosted Navbar -->
-<nav>
-    <!-- The Infinity Logo (Unicode) -->
-    <a href="#" class="nav-logo">&#8734;</a>
-    
-    <a href="#mobility">Green Mobility</a>
-    <a href="#infinity">Infinity Products</a>
-    <a href="#us">Us</a>
-</nav>
+    <nav>
+        <a href="#" class="nav-logo">&#8734;</a>
+        <a href="#mobility">Green Mobility</a>
+        <a href="#infinity">Infinity Products</a>
+        <a href="#us">Us</a>
+    </nav>
 
     <!-- Main Front Page Container -->
     <main class="front-page-container">
+
+        <!-- HERE IS THE HERO SECTION: Placed perfectly inside main, but directly ABOVE the grid -->
+        <section class="company-hero">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Infinity_Symbol.svg" alt="Infinity Logo" class="hero-logo">
+            <h1>Infinity</h1>
+            <p class="hero-subtitle">The green company</p>
+        </section>
+
+        <!-- THE GRID CONTAINER: Holds the columns cleanly underneath the introductory headline -->
         <div class="apple-grid">
 
             <!-- Card 1: Green Mobility -->
@@ -221,7 +259,7 @@
             <section class="card card-infinity" id="infinity">
                 <div class="card-content">
                     <h2>Infinity Products</h2>
-                    <p>Built for the long haul. Limitless hardware, solar powered. The end or programmed obsolescence</p>
+                    <p>Built for the long haul. Limitless hardware, solar powered. The end of programmed obsolescence.</p>
                 </div>
                 <a href="#" class="card-link">Explore the lineup &gt;</a>
             </section>
@@ -235,7 +273,7 @@
                 <a href="#" class="card-link">Meet the team &gt;</a>
             </section>
 
-        </div>
+        </div> <!-- Closes the apple-grid -->
     </main>
 
 </body>
